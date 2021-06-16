@@ -3,7 +3,14 @@ from django.db import models
 
 class Customer(models.Model):
     chat_id = models.IntegerField(
-        verbose_name='Идентификатор чата'
+        verbose_name='Идентификатор чата',
+        primary_key=True
+    )
+    username = models.CharField(
+        verbose_name='Юзернейм',
+        max_length=32,
+        null=True,
+        blank=True
     )
     join_date = models.DateTimeField(
         verbose_name='Когда присоеденился',
